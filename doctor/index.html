@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+ $(document).ready(function(){
+    $("#search_btn").click(function(){
+      var doctor_type= $("#doctor_type").val();
+      var doctor_area= $("#doctor_area").val();
+      $.post("webservice1.php",{search: doctor_type,area: doctor_area},function(Response){
+        $("searchSection").html(response);
+      });
+    });
+  });
+  </script>
+  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" />-->
+</head>
+
+<body>
+  <div class="desktop-1">
+    <div class="service">
+      <div class="servicebg"></div>
+      <div class="servicedescription">
+        <div class="servicedescriptionbg"></div>
+        <b class="bannerdescriptiontext">
+          <span class="bannerdescriptiontext-txt">
+            <span>Finding a </span>
+            <span class="doctor">doctor</span>
+            <span> you can build long </span>
+            <span class="relation-ship">relation ship</span>
+            <span> with is good for health.</span>
+          </span>
+        </b>
+        <div class="shortdescriptiontext">
+          searchdoctorstext searchdoctorstext searchdoctorstext
+          searchdoctorstext searchdoctorstext searchdoctorstext
+          earchdoctorstextsearchdoctorstextsearchdoctorstext
+        </div>
+        <div class="learnmorebtn">
+          <div class="signupbg"></div>
+          <b class="learn-more-">Learn More -&gt;</b>
+        </div>
+      </div>
+      <img class="servicephotobg-icon" alt="" src="./public/servicephotobg@2x.png" />
+    </div>
+    <div id="searchSection" class="appointment">
+      <div class="appointmentbg"></div>
+      <div class="appointmentstepsheading">
+        4 easy steps to get your solution
+      </div>
+      <div class="frame-parent">
+        <div class="doctor-serial-parent">
+          <div class="doctor-serial">Happy Cons</div>
+          <img class="frame-child" alt="" src="./public/rectangle-3@2x.png" />
+
+          <div class="shortdescriptiontext1">
+            searchd octorstext sea rchdoctorstext searchdo ctorste xt
+            searchdoctorstext searchd octorstext searchdoctorstext
+          </div>
+          <div class="learnmorebtn1">
+            <div class="signupbg1"></div>
+            <b class="learn-more-1">Learn More -&gt;</b>
+          </div>
+          <div class="frame-item"></div>
+        </div>
+        <div class="doctor-serial-group">
+          <div class="doctor-serial1">Share information</div>
+          <img class="frame-child" alt="" src="./public/rectangle-31@2x.png" />
+
+          <div class="shortdescriptiontext1">
+            searchd octorstext sea rchdoctorstext searchdo ctorste xt
+            searchdoctorstext searchd octorstext searchdoctorstext
+          </div>
+          <div class="learnmorebtn1">
+            <div class="signupbg1"></div>
+            <b class="learn-more-1">Learn More -&gt;</b>
+          </div>
+          <div class="frame-item"></div>
+        </div>
+        <div class="doctor-serial-container">
+          <div class="doctor-serial2">Get Appointment</div>
+          <img class="rectangle-icon" alt="" src="./public/rectangle-32@2x.png" />
+
+          <div class="shortdescriptiontext1">
+            searchd octorstext sea rchdoctorstext searchdo ctorste xt
+            searchdoctorstext searchd octorstext searchdoctorstext
+          </div>
+          <div class="learnmorebtn1">
+            <div class="signupbg1"></div>
+            <b class="learn-more-1">Learn More -&gt;</b>
+          </div>
+          <div class="frame-item"></div>
+        </div>
+        <div class="frame-item">
+          <div class="doctor-serial">Find Doctor</div>
+          <img class="image-1-icon" alt="" src="./public/image-1@2x.png" />
+
+          <div class="frame-child2"></div>
+          <div class="shortdescriptiontext1">
+            searchd octorstext sea rchdoctorstext searchdo ctorste xt
+            searchdoctorstext searchd octorstext searchdoctorstext
+          </div>
+          <div class="learnmorebtn1">
+            <div class="signupbg1"></div>
+            <b class="learn-more-1">Learn More -&gt;</b>
+          </div>
+          <div class="frame-item"></div>
+        </div>
+      </div>
+    </div>
+    <div class="banner">
+      <img class="image-3-icon" alt="" src="./public/image-3@2x.png" />
+
+      <div class="bannerbg"></div>
+      <div class="bannerdescription">
+        <div class="searchbargrp">
+          <div class="searchbarbg"></div>
+          <button id="search_btn" class="searchdoctorsgrp ">
+            <div  class="searchdoctorsbg"></div>
+           <b  class="searchdoctorstext">Search</b>
+          </button>
+          <input id="doctor_type" class="selectdoctorgrp" type="text" defaultvalue="Enter Doctor type" placeholder="Enter Doctor" />
+          <input id="doctor_area" class="selectlocationgrp" type="text" placeholder="Select Location" />
+        </div>
+        <div class="shortdescriptiontext5">
+          searchdoctorstext searchdoctorstext searchdoctorstext
+          searchdoctorstext searchdoctorstext searchdoctorstext
+          earchdoctorstextsearchdoctorstextsearchdoctorstext
+        </div>
+        <b class="bannerdescriptiontext1">
+          <span class="bannerdescriptiontext-txt">
+            <span>Finding a </span>
+            <span class="doctor">doctor</span>
+            <span> you can build long </span>
+            <span class="relation-ship">relation ship</span>
+            <span> with is good for health.</span>
+          </span>
+        </b>
+        <div class="bannerdescriptionbg"></div>
+      </div>
+      <img class="bannerphotobg-icon" alt="" />
+    </div>
+    <div class="navbar">
+      <div class="navbarbg"></div>
+      <div class="logo"></div>
+      <b class="doctory">Doctory</b>
+      <div class="menubar">
+        <div class="menubg"></div>
+        <a class="home" href="/">Home</a>
+        <button class="about-us">About us</button>
+        <b class="contact-us">Contact us</b>
+        <button class="service1">Service</button>
+        <button class="features">Features</button>
+        <div class="signupbtn">
+          <div class="signupbg5"></div>
+          <b class="sign-up">Sign up</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+</body>
+
+
+
+</html>
