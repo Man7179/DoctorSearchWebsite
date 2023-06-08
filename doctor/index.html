@@ -8,17 +8,7 @@
   <link rel="stylesheet" href="./index.css" />
   <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script>
- $(document).ready(function(){
-    $("#search_btn").click(function(){
-      var doctor_type= $("#doctor_type").val();
-      var doctor_area= $("#doctor_area").val();
-      $.post("webservice1.php",{search: doctor_type,area: doctor_area},function(Response){
-        $("searchSection").html(response);
-      });
-    });
-  });
-  </script>
+ 
   <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" />-->
 </head>
 
@@ -122,7 +112,7 @@
         <div class="searchbargrp">
           <div class="searchbarbg"></div>
           <button id="search_btn" class="searchdoctorsgrp ">
-            <div  class="searchdoctorsbg"></div>
+            <div id="search_btn" class="searchdoctorsbg"></div>
            <b  class="searchdoctorstext">Search</b>
           </button>
           <input id="doctor_type" class="selectdoctorgrp" type="text" defaultvalue="Enter Doctor type" placeholder="Enter Doctor" />
@@ -164,10 +154,17 @@
       </div>
     </div>
   </div>
-
- 
+ <script>
+ $(document).ready(function(){
+    $("#search_btn").click(function(){
+      var doctor_type= $("#doctor_type").val();
+      var doctor_area= $("#doctor_area").val();
+      $.post("webservice1.php",{search: doctor_type,area: doctor_area},function(Response){
+        $("#searchSection").html(Response);
+        console.log('response', Response)
+      });
+    });
+  });
+  </script>
 </body>
-
-
-
 </html>
