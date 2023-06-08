@@ -16,7 +16,7 @@ $sql = "SELECT *FROM `doctors` WHERE DoctorArea like '%".$search_area."%' and Do
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
-    $data='div class="appointmentstepsheading">
+    $data='<div class="appointmentstepsheading">
     Doctors Found in Your Area 
   </div>';
   $doctor_data="";
@@ -26,31 +26,27 @@ if($result->num_rows > 0){
     $doctorinfo = $row["Doctorinformation"];
     $doctorimg = $row["Doctorimage"];
 
-    $doctor_data=$doctor_data.'<div class="doctor-serial-parent">
+    $doctor_data= $doctor_data.'<div class="doctor-serial-parent">
     <div class="doctor-serial">'.$doctorname.'</div>
     <img class="frame-child" alt="" src="'.$doctorimg.'" />
 
     <div class="shortdescriptiontext1">'.$doctorinfo.'</div>
-    <div class="learnmorebtn1">
-      <div class="signupbg1"></div>
-      <b class="learn-more-1">Learn More -&gt;</b>
-    </div>
     <div class="frame-item"></div>
   </div>';
 }
 }else{
-    $data='div class="appointmentstepsheading">
+    $data='<div class="appointmentstepsheading">
     No Doctor Found in Your Area 
   </div>';
 }
 
 }else{
-    $data='div class="appointmentstepsheading">
+    $data='<div class="appointmentstepsheading">
     Bad Query
   </div>';
 }
 
-$data=$data.$doctor_data;
 echo $data;
+echo $doctor_data;
 
 ?>
