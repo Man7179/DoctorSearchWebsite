@@ -170,15 +170,13 @@
 }
 .doctor-serial-parent,
 .frame-item {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  top: 150px;
+  float: right;
   width: 329px;
   height: 445px;
 }
-.doctor-serial-parent {
-  left: 724px;
-}
+
 .doctor-serial1 {
   position: absolute;
   top: 183px;
